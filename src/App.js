@@ -1,6 +1,10 @@
 import './App.css';
 import React , {Component} from 'react'
-import {Header, Board, Footer} from './components/mainApp'
+import {Boards} from './components/Boards'
+import {Header} from './components/Header'
+import {Footer} from './components/Footer'
+import {connect} from 'react-redux'
+
 class App extends Component {
   // Todos:
   // create static design
@@ -11,11 +15,15 @@ class App extends Component {
     return (
       <div className="app-container">
         <Header className="header" />
-        <Board className="board" />
+        <Boards className="board" cards={this.props.cards} />
         <Footer className="footer" />
       </div>
     )
   }
 }
 
-export default App;
+const stateToProps = (state,props) => {
+  console.log(state);
+  return {cards: state.cards}
+}
+export default connect(stateToProps,null)(App);
