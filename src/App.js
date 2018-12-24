@@ -4,9 +4,9 @@ import {Header, Board, Footer} from './components/mainApp'
 class App extends Component {
   // Todos:
   // create static design
-  // Styling
-  // Responsive
-
+  // state management
+  // prop types
+  // basic styling
   render() {
     return (
       <div className="app-container">

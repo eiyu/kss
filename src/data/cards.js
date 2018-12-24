@@ -1,0 +1,30 @@
+// data structure
+export const testArray = [
+  {
+    title:"",
+    status:"",
+    point:1,
+    created:"",
+    finished:"",
+    creator:"",
+    assignTo:""
+  },
+  {
+    title:"",
+    status:"",
+    point:1,
+    created:"",
+    finished:"",
+    creator:"",
+    assignTo:""
+  },
+  {
+    title:"",
+    status:"",
+    point:1,
+    created:"",
+    finished:"",
+    creator:"",
+    assignTo:""
+  }
+]

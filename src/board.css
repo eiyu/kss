@@ -1,0 +1,17 @@
+
+ .board-container {
+  display: -webkit-flex;
+  display: flex;
+  width: auto;
+  height: 250px;
+  background-color: red;
+  padding: 20px;
+}
+
+.board {
+  width: 600px;
+  height: auto;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid black;
+}

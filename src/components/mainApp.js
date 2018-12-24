@@ -1,23 +1,28 @@
 import React from 'react'
+import BackLog from './Status/BackLog'
+import Todo from './Status/Todo'
+import Doing from './Status/Doing'
+import Done from './Status/Done'
 import '../board.css'
+
 export const Header = (props) => (
   <header>Yuliana Kanban Test</header>
 )
 
+/*Todo: Create Each card functionalities */
 export const Board = (props) => (
   <div className="board-container">
-    {/*Todo: Create Each card functionalities */}
     <div className="board">
-      Back-Log
+      <BackLog />
     </div>
     <div className="board">
-      To-Do
+      <Todo />
     </div>
     <div className="board">
-      In Progress (Doing)
+      <Doing />
     </div>
     <div className="board">
-      Done
+      <Done />
     </div>
   </div>
 )
