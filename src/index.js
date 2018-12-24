@@ -6,6 +6,11 @@ import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import {allReducers} from './reducers/cardReducer'
 import * as serviceWorker from './serviceWorker';
+// exrta
+// good design
+// make api call 
+// drag and drop items
+
 
 const store = createStore(allReducers, {});
 
