@@ -12,7 +12,6 @@ const Cards = ({items: card}) => (
         Object.keys(card)
           // better use card id than array index
           .map((key) => {
-            console.log(key);
             // create separate component
             return (<Card item={card[key]} key={key} />)
           })
