@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Cards from './Cards.js'
 export const Board = (props) => (
   <div className="board-container">
@@ -8,3 +9,7 @@ export const Board = (props) => (
     </div>
   </div>
 )
+Board.propTypes = {
+  boardName: PropTypes.string,
+  cards: PropTypes.array
+}

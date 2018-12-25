@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import {Board} from './Board'
 import Grid from './styled/Grid'
 import Row from './styled/Row'
@@ -20,3 +21,7 @@ export const Boards = (props) => (
   </Row>
   </Grid>
 )
+
+Boards.propTypes = {
+  cards: PropTypes.array
+}

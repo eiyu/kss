@@ -1,18 +1,7 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {showTaskDetails} from '../actions/togglesActions'
-// todo create updating functionalities
-// const Card = ({item,onShowDetails}) => {
-//   console.log(onShowDetails);
-//   return (
-//     <div className="card">
-//       <h4>{item.title}</h4>
-//       <p>Point: {item.point}</p>
-//       <p>Assign To: {item.assignTo}</p>
-//       {/*add styled component*/}
-//       <button onClick={onShowDetails}>Show Detail</button>
-//     </div>
-// )}
 
 class Card extends Component {
   constructor() {
@@ -35,9 +24,16 @@ class Card extends Component {
   }
 }
 
+Card.propTypes = {
+  item: PropTypes.object,
+  onShowDetails: PropTypes.func
+}
+
+// USELESS?
 const stateToProps = (state,props) => ({
   showTaskDetails: state.toggles
 })
+
 const mapDispatchToProps = dispatch => ({
   onShowDetails: () => showTaskDetails()
 })

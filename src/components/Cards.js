@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import Card from './Card'
 import '../cards.css'
 // todo create updating functionalities
@@ -16,5 +17,9 @@ const Cards = ({items: card}) => (
     </div>
   </div>
 )
+
+Cards.propTypes = {
+  items: PropTypes.array
+}
 
 export default Cards
