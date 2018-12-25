@@ -24,7 +24,7 @@ class App extends Component {
       <div className="app-container">
         <Header className="header" />
         <Button color={''}> Add Task </Button>
-        <Boards className="board" cards={this.props.cards} />
+        <Boards className="board" cards={this.props} />
         <Footer className="footer" />
       </div>
     )
@@ -37,7 +37,10 @@ App.propTypes = {
 
 const stateToProps = (state,props) => {
   return {
-    cards: state.cards
+    backlog: state.backlog,
+    todo: state.todo,
+    doing: state.doing,
+    done: state.done,
   }
 }
 export default connect(stateToProps,null)(App);

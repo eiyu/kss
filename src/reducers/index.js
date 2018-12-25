@@ -1,9 +1,12 @@
 import {combineReducers} from 'redux'
-import {cardReducer} from './cardReducer'
+import {cardContext} from './cardReducer'
 import {togglesReducer} from './togglesReducer'
-
+import {treeData} from '../data/treeData'
 const allReducers = combineReducers({
-  cards: cardReducer,
+  backlog: cardContext('backlog', treeData.backlog),
+  todo: cardContext('todo', treeData.todo),
+  doing: cardContext('doing', treeData.doing),
+  done: cardContext('done', treeData.done),
   toggles: togglesReducer
 })
 
