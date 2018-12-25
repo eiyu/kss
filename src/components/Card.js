@@ -8,9 +8,6 @@ import '../cards.css'
 class Card extends Component {
   constructor() {
     super()
-    this.state = {
-      show: false
-    }
   }
 
   render() {
@@ -20,7 +17,7 @@ class Card extends Component {
         <p>Point: {this.props.item.point}</p>
         <p>Assign To: {this.props.item.assignTo}</p>
         {/*add styled component*/}
-        <Button> Show Details </Button>
+        <Button onClick={() => this.props.onShowDetails(this.props.item)}> Show Details </Button>
       </div>
     )
   }
@@ -31,12 +28,11 @@ Card.propTypes = {
   onShowDetails: PropTypes.func
 }
 
-// USELESS?
-const stateToProps = (state,props) => ({
-  showTaskDetails: state.toggles
-})
+// const mapState = (state, props) => ({
+//   showDetails: state.toggles.showDetails
+// })
 
 const mapDispatchToProps = dispatch => ({
-  onShowDetails: () => showTaskDetails()
+  onShowDetails: (item) => dispatch(showTaskDetails(item))
 })
-export default connect(stateToProps, mapDispatchToProps)(Card)
+export default connect(null, mapDispatchToProps)(Card)

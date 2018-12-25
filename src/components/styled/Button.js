@@ -6,7 +6,7 @@ export const Button = styled.button`
   height: auto;
   padding: 5px;
   border-radius: 5px;
-  color: ${({color}) => color};
+  background-color: ${({color}) => color};
 `
 
 Button.displayName = 'Button'
