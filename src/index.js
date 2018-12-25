@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+// import './index.css';
 import App from './App';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
-import {allReducers} from './reducers/cardReducer'
+import allReducers from './reducers'
 import * as serviceWorker from './serviceWorker';
 // exrta
 // good design
-// make api call 
+// make api call
 // drag and drop items
 
 

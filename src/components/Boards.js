@@ -1,7 +1,9 @@
 import React from 'react'
 import {Board} from './Board'
-
-import '../board.css'
+import Grid from './styled/Grid'
+import Row from './styled/Row'
+import Col from './styled/Col'
+// import '../board.css'
 
 // helper function
 const filterCard = (cards,status) => cards.filter((card) => {
@@ -9,10 +11,12 @@ const filterCard = (cards,status) => cards.filter((card) => {
 })
 
 export const Boards = (props) => (
-  <div className="boards">
-    <Board className="board" cards={filterCard(props.cards,'backlog')} boardName="Back-Log"/>
-    <Board className="board" cards={filterCard(props.cards,'todo')} boardName="To-do"/>
-    <Board className="board" cards={filterCard(props.cards,'doing')} boardName="Doing"/>
-    <Board className="board" cards={filterCard(props.cards,'done')} boardName="Done"/>
-  </div>
+  <Grid>
+  <Row>
+    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'backlog')} boardName="Back-Log"/></Col>
+    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'todo')} boardName="To-do"/></Col>
+    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'doing')} boardName="Doing"/></Col>
+    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'done')} boardName="Done"/></Col>
+  </Row>
+  </Grid>
 )

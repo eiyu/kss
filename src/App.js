@@ -1,4 +1,4 @@
-import './App.css';
+// import './App.css';
 import React , {Component} from 'react'
 import {Boards} from './components/Boards'
 import {Header} from './components/Header'
@@ -11,6 +11,12 @@ class App extends Component {
   // state management
   // prop types
   // basic styling
+  // constructor() {
+  //   super()
+  //   this.state = {
+  //     showDetails: false
+  //   }
+  // }
   render() {
     return (
       <div className="app-container">
@@ -23,7 +29,8 @@ class App extends Component {
 }
 
 const stateToProps = (state,props) => {
-  console.log(state);
-  return {cards: state.cards}
+  return {
+    cards: state.cards
+  }
 }
 export default connect(stateToProps,null)(App);

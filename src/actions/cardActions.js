@@ -1,6 +1,6 @@
-export const CHANGE_STATUS = "CHANGE_STATUS"
+export const UPDATE_STATUS = "UPDATE_STATUS"
 
-export const changeStatus = (status) => ({
-  type: "CHANGE_STATUS",
+export const updateStatus = (status) => ({
+  type: "UPDATE_STATUS",
   status
 })

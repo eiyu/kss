@@ -4,12 +4,11 @@
 
 
 import {testArray} from '../data/cards'
-import {CHANGE_STATUS} from '../actions/cardActions'
-import {combineReducers} from 'redux'
+import {UPDATE_STATUS} from '../actions/cardActions'
 
 export const cardReducer = (state=testArray, action) => {
   switch (action.type) {
-    case CHANGE_STATUS:
+    case UPDATE_STATUS:
       return Object.assign({}, state, {
         status: action.payload
       })
@@ -17,7 +16,3 @@ export const cardReducer = (state=testArray, action) => {
     return state
   }
 }
-
-export const allReducers = combineReducers({
-  cards: cardReducer
-})
