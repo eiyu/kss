@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {showTaskDetails} from '../actions/togglesActions'
+import {Button} from './styled/Button'
+import '../cards.css'
 
 class Card extends Component {
   constructor() {
@@ -18,7 +20,7 @@ class Card extends Component {
         <p>Point: {this.props.item.point}</p>
         <p>Assign To: {this.props.item.assignTo}</p>
         {/*add styled component*/}
-        <button onClick={this.props.onShowDetails}>Show Detail</button>
+        <Button> Show Details </Button>
       </div>
     )
   }

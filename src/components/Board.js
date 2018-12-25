@@ -1,15 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Cards from './Cards.js'
+import {BoardTitle} from './styled/BoardTitle'
 export const Board = (props) => (
-  <div className="board-container">
-    <div className="board">
-      <h4>{props.boardName}</h4> <hr/>
-      <Cards items={props.cards} />
-    </div>
-  </div>
+      <BoardTitle color={props.color}>
+        <div className="container">
+          <div className="title">
+            <h4>{props.boardName}</h4>
+            <hr/>
+            <div> maybe sorting feature here if data gets bigger </div>
+          </div>
+          <Cards className="card" items={props.cards} />
+        </div>
+      </BoardTitle>
 )
 Board.propTypes = {
   boardName: PropTypes.string,
-  cards: PropTypes.array
+  cards: PropTypes.array,
+  color: PropTypes.string
 }

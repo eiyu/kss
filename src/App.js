@@ -5,6 +5,7 @@ import {Boards} from './components/Boards'
 import {Header} from './components/Header'
 import {Footer} from './components/Footer'
 import {connect} from 'react-redux'
+import {Button} from './components/styled/Button'
 
 class App extends Component {
   // Todos:
@@ -17,10 +18,12 @@ class App extends Component {
   //     showDetails: false
   //   }
   // }
+
   render() {
     return (
       <div className="app-container">
         <Header className="header" />
+        <Button color={''}> Add Task </Button>
         <Boards className="board" cards={this.props.cards} />
         <Footer className="footer" />
       </div>

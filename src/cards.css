@@ -1,3 +1,6 @@
-.card-container {
+.card {
   border: 1px solid black;
+  margin: 0px;
+  margin-bottom: 2px;
+  padding: 5px;
 }

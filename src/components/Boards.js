@@ -14,10 +14,10 @@ const filterCard = (cards,status) => cards.filter((card) => {
 export const Boards = (props) => (
   <Grid>
   <Row>
-    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'backlog')} boardName="Back-Log"/></Col>
-    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'todo')} boardName="To-do"/></Col>
-    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'doing')} boardName="Doing"/></Col>
-    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'done')} boardName="Done"/></Col>
+    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'backlog')} boardName="Back-Log" color="red"/></Col>
+    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'todo')} boardName="To-do" color="blue"/></Col>
+    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'doing')} boardName="Doing" color="orange"/></Col>
+    <Col xs={10} md={3} lg={3}><Board cards={filterCard(props.cards,'done')} boardName="Done" color="green"/></Col>
   </Row>
   </Grid>
 )
