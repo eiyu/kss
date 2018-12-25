@@ -1,6 +1,10 @@
-export const UPDATE_STATUS = "UPDATE_STATUS"
-
-export const updateStatus = (status) => ({
-  type: "UPDATE_STATUS",
+export const UPDATE_CARD = "UPDATE_CARD"
+export const REMOVE = "REMOVE"
+export const updateCard = (status) => ({
+  type: "UPDATE_CARD",
   status
+})
+export const removeCard = (id) => ({
+  type: "REMOVE",
+  id
 })

@@ -9,18 +9,20 @@ const Cards = ({items: card}) => (
     <div className="card-status">{card.status}</div>
     <CardsContainer>
       {
-        // better use card id than array index
-        card.map((item,i) => {
-          // create separate component
-          return (<Card item={item} key={i} />)
-        })
+        Object.keys(card)
+          // better use card id than array index
+          .map((key) => {
+            console.log(key);
+            // create separate component
+            return (<Card item={card[key]} key={key} />)
+          })
       }
     </CardsContainer>
   </div>
 )
 
 Cards.propTypes = {
-  items: PropTypes.array
+  items: PropTypes.object
 }
 
 export default Cards

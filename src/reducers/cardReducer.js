@@ -3,12 +3,12 @@
 // firebase has realtime database which is good for just in time manufacturing
 
 
-import {testArray} from '../data/cards'
-import {UPDATE_STATUS} from '../actions/cardActions'
+import {treeData} from '../data/treeData'
+import {UPDATE_CARD, REMOVE} from '../actions/cardActions'
 
-export const cardReducer = (state=testArray, action) => {
+export const cardReducer = (state=treeData, action) => {
   switch (action.type) {
-    case UPDATE_STATUS:
+    case UPDATE_CARD:
       return Object.assign({}, state, {
         status: action.payload
       })

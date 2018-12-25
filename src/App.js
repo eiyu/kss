@@ -32,7 +32,7 @@ class App extends Component {
 }
 
 App.propTypes = {
-  cards: PropTypes.array
+  cards: PropTypes.object
 }
 
 const stateToProps = (state,props) => {

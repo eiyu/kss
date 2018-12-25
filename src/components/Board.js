@@ -16,6 +16,6 @@ export const Board = (props) => (
 )
 Board.propTypes = {
   boardName: PropTypes.string,
-  cards: PropTypes.array,
+  cards: PropTypes.object,
   color: PropTypes.string
 }
