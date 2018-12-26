@@ -1,7 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Button} from './styled/Button'
-import {connect} from 'react-redux'
+import {ButtonGroup} from './ButtonGroup'
 // position center top
 const TaskDetails = ({task, status}) => {
   console.log('render');
@@ -13,12 +12,7 @@ const TaskDetails = ({task, status}) => {
     <div>Assign To: {task.assignTo}</div>
     <div>Point: {task.point}</div>
     {/* create separate component with */}
-    <div className="button-group">
-      <button>Delete</button> {/*first step button position left*/}
-      <button>Go to Prev Status</button>
-      <button>Go to Next Status</button>
-      <button>Delete</button> {/*last step button position right*/}
-    </div>
+    <ButtonGroup status={status}/>
   </div>
 )}
 

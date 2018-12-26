@@ -13,12 +13,12 @@ import Col from './styled/Col'
 
 export const Boards = (props) => (
   <Grid>
-  <Row>
-    <Col xs={10} md={3} lg={3}><Board cards={props.cards.backlog} boardName="Back-Log" color="red"/></Col>
-    <Col xs={10} md={3} lg={3}><Board cards={props.cards.todo} boardName="To-Do" color="blue"/></Col>
-    <Col xs={10} md={3} lg={3}><Board cards={props.cards.doing} boardName="Doing" color="orange"/></Col>
-    <Col xs={10} md={3} lg={3}><Board cards={props.cards.done} boardName="Done" color="green"/></Col>
-  </Row>
+    <Row>
+      <Col xs={10} md={3} lg={3}><Board cards={props.cards.backlog} boardName="Back-Log" color="red"/></Col>
+      <Col xs={10} md={3} lg={3}><Board cards={props.cards.todo} boardName="To-Do" color="blue"/></Col>
+      <Col xs={10} md={3} lg={3}><Board cards={props.cards.doing} boardName="Doing" color="orange"/></Col>
+      <Col xs={10} md={3} lg={3}><Board cards={props.cards.done} boardName="Done" color="green"/></Col>
+    </Row>
   </Grid>
 )
 

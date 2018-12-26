@@ -5,12 +5,11 @@ import {Boards} from './components/Boards'
 import {Header} from './components/Header'
 import {Footer} from './components/Footer'
 import TaskForm from './components/TaskForm'
-import TaskDetails from './components/TaskDetails'
 import {connect} from 'react-redux'
 import {Button} from './components/styled/Button'
 import {showForm} from './actions/togglesActions'
+import {ShowDetails} from './components/ShowDetails'
 import {TaskFormContainer} from './components/styled/TaskFormContainer'
-import {TaskDetailsContainer} from './components/styled/TaskDetailsContainer'
 class App extends Component {
   // Todos:
 
@@ -22,9 +21,10 @@ class App extends Component {
         <TaskFormContainer show={this.props.toggles.showForm}>
           <TaskForm />
         </TaskFormContainer>
-        <TaskDetailsContainer>
-          <TaskDetails />
-        </TaskDetailsContainer>
+        <ShowDetails {...this.props.backlogTask}/>
+        <ShowDetails {...this.props.todoTask}/>
+        <ShowDetails {...this.props.doingTask}/>
+        <ShowDetails {...this.props.doneTask}/>
         <Header className="header" />
         <Button color={'silver'} onClick={this.props.onShowForm}> Add Task </Button>
         <Boards className="board" cards={this.props} />
