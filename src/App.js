@@ -9,6 +9,7 @@ import {showForm} from './actions/togglesActions'
 import {showTaskDetails} from './actions/togglesActions'
 import {ShowDetails} from './components/ShowDetails'
 import {ShowCreateForm} from './components/ShowCreateForm'
+import Weather from './components/Weather'
 class App extends Component {
 
   // Todos:
@@ -21,6 +22,7 @@ class App extends Component {
     return (
       <div className="app-container">
         <Header className="header" />
+          <Weather data={this.props.data}/>
         <Button color={'silver'} onClick={this.props.onShowForm}> Add Task </Button>
         <Boards className="board" cards={this.props} />
           <ShowCreateForm onToggle={this.props.onShowForm} show={this.props.toggles.showForm} />
