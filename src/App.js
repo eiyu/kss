@@ -12,10 +12,6 @@ import {ShowDetails} from './components/ShowDetails'
 import {TaskFormContainer} from './components/styled/TaskFormContainer'
 class App extends Component {
 
-  // Bug:
-  // some PropTypes.object become an array after deletion -> if using real db
-  // the bug will be gone or rewrite logic in the reducer
-
   // Todos:
   // make api calls
   // more styling

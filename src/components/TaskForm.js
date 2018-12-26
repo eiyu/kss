@@ -28,7 +28,8 @@ class TaskForm extends Component {
   handleSubmit(e) {
     e.preventDefault()
     const {title, description, assignTo, point} = this.refs
-    this.props.onCreateTask({"idGen":{
+    // using date.now for indexing, it just for mimic real indexing
+    this.props.onCreateTask({[Date.now()]:{
       title: title.value,
       description: description.value,
       assignTo: assignTo.value,

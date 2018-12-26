@@ -18,9 +18,14 @@ export const cardContext = function(name='', initialState) {
 
       case `${REMOVE}_${name}`:
       // if using database the logic will be different
-        return Object.keys(state).filter(key => {
-          return key !== action.id
-        }).map(id => state[id])
+        return Object.assign({}, state,
+          (function(state){
+            if(state.hasOwnProperty(action.id)) {
+              delete state[action.id]
+            }
+            return state
+          }(state))
+        )
       default:
       return state
     }

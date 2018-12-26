@@ -12,7 +12,7 @@ const TaskDetails = ({task, status, id}) => {
     <div>Assign To: {task.assignTo}</div>
     <div>Point: {task.point}</div>
     {/* create separate component with */}
-    <ButtonGroup status={status} id={id}/>
+    <ButtonGroup card={task} status={status} id={id}/>
   </div>
 )}
 

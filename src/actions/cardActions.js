@@ -8,15 +8,27 @@ export const createCard = (card, name) => ({
   card
 })
 
-export const updateCard = (card, name) => ({
-  type: `${UPDATE_CARD}_${name}`,
-  card
-})
-export const removeCard = (dispatch, id, name) => {
+export const updateCard = (dispatch,id, card, to, name) => {
+  // hide task details
+  // create / update
+  // delete unused
   dispatch({
     type: `${SHOW_TASK_DETAILS}${name}`,
-    card: void 0,
+  })
+  dispatch({
+    type: `${CREATE_CARD}_${to}`,
+    card: {[id]:card}
+  })
+  dispatch({
+    type: `${REMOVE}_${name}`,
     id
+  })
+}
+
+
+export const removeCard = (dispatch, id, name) => {
+  dispatch({
+    type: `${SHOW_TASK_DETAILS}${name}`
   })
   dispatch({
     type: `${REMOVE}_${name}`,
