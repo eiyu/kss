@@ -1,3 +1,4 @@
+import {SHOW_TASK_DETAILS} from './taskActions'
 export const UPDATE_CARD = "UPDATE_CARD"
 export const CREATE_CARD = "CREATE_CARD"
 export const REMOVE = "REMOVE"
@@ -11,7 +12,14 @@ export const updateCard = (card, name) => ({
   type: `${UPDATE_CARD}_${name}`,
   card
 })
-export const removeCard = (id, name) => ({
-  type: `${REMOVE}_${name}`,
-  id
-})
+export const removeCard = (dispatch, id, name) => {
+  dispatch({
+    type: `${SHOW_TASK_DETAILS}${name}`,
+    card: void 0,
+    id
+  })
+  dispatch({
+    type: `${REMOVE}_${name}`,
+    id
+  })
+}

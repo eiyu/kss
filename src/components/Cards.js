@@ -12,7 +12,7 @@ const Cards = ({items: card, status}) => (
           // better use card id than array index
           .map((key) => {
             // create separate component
-            return (<Card status={status} item={card[key]} key={key} />)
+            return (<Card status={status} item={card[key]} key={key} id={key}/>)
           })
       }
     </CardsContainer>

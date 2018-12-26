@@ -5,10 +5,10 @@ import {task} from './taskReducer'
 import {treeData} from '../data/treeData'
 
 const allReducers = combineReducers({
-  backlog: cardContext('backlog', treeData.backlog),
-  todo: cardContext('todo', treeData.todo),
-  doing: cardContext('doing', treeData.doing),
-  done: cardContext('done', treeData.done),
+  backlog: cardContext('Back-Log', treeData.backlog),
+  todo: cardContext('To-Do', treeData.todo),
+  doing: cardContext('Doing', treeData.doing),
+  done: cardContext('Done', treeData.done),
   toggles: togglesReducer,
   backlogTask: task('Back-Log'),
   todoTask: task('To-Do'),

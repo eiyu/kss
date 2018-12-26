@@ -5,10 +5,10 @@ export const SHOW_TASK_DETAILS = "SHOW_TASK_DETAILS"
 //   return {type: SHOW_FORM}
 // }
 
-export const showTaskDetails = (card,name) => {
-  console.log(name);
+export const showTaskDetails = (id,card,name) => {
   return {
     type: `${SHOW_TASK_DETAILS}${name}`,
-    card
+    card,
+    id
   }
 }

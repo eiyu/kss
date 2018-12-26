@@ -5,17 +5,22 @@
 import {CREATE_CARD, UPDATE_CARD, REMOVE} from '../actions/cardActions'
 
 // higher order reducer
+//
 export const cardContext = function(name='', initialState) {
   return function cardReducer(state=initialState, action) {
     switch (action.type) {
       case `${CREATE_CARD}_${name}`:
-        console.log(action.card);
+      // if using database the logic will be different
         return Object.assign({},state,{...state,...action.card})
       case `${UPDATE_CARD}_${name}`:
         // wh
-        return //logic here
+        return state //logic here
+
       case `${REMOVE}_${name}`:
-        return //logic here
+      // if using database the logic will be different
+        return Object.keys(state).filter(key => {
+          return key !== action.id
+        }).map(id => state[id])
       default:
       return state
     }

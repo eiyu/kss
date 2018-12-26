@@ -33,7 +33,7 @@ class TaskForm extends Component {
       description: description.value,
       assignTo: assignTo.value,
       point: point.value,
-    }},"backlog")
+    }},"Back-Log")
       title.value = ""
       description.value = ""
       assignTo.value = ""

@@ -11,6 +11,7 @@ class Card extends Component {
   // }
 
   render() {
+    console.log('key', this.props.id);
     return (
       <div className="card">
 
@@ -18,7 +19,12 @@ class Card extends Component {
         <p>Point: {this.props.item.point}</p>
         <p>Assign To: {this.props.item.assignTo}</p>
         {/*add styled component*/}
-        <Button onClick={() => this.props.onShowDetails(this.props.item,this.props.status)}> Show Details </Button>
+        <Button
+        onClick={
+          () => this.props.onShowDetails(this.props.id, this.props.item,this.props.status)
+        }>
+        Show Details
+        </Button>
       </div>
     )
   }
@@ -30,7 +36,7 @@ Card.propTypes = {
 }
 
 const mapDispatchToProps = dispatch => ({
-  onShowDetails: (task, name) => dispatch(showTaskDetails(task, name))
+  onShowDetails: (id,task, name) => dispatch(showTaskDetails(id,task, name))
 })
 
 export default connect(null, mapDispatchToProps)(Card)

@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {ButtonGroup} from './ButtonGroup'
+import ButtonGroup from './ButtonGroup'
 // position center top
-const TaskDetails = ({task, status}) => {
+const TaskDetails = ({task, status, id}) => {
   console.log('render');
   return (
   <div>
@@ -12,7 +12,7 @@ const TaskDetails = ({task, status}) => {
     <div>Assign To: {task.assignTo}</div>
     <div>Point: {task.point}</div>
     {/* create separate component with */}
-    <ButtonGroup status={status}/>
+    <ButtonGroup status={status} id={id}/>
   </div>
 )}
 

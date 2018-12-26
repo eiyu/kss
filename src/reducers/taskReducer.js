@@ -10,9 +10,10 @@ export const task = (name="") => {
     switch (action.type) {
       case `${SHOW_TASK_DETAILS}${name}`:
         return Object.assign({}, state, {
-            show: state.show === false ? true : false,
-            card: state.show === false ? action.card : {},
-            status: name
+          show: state.show === false ? true : false,
+          card: state.show === false ? action.card : {},
+          id: state.show === false ? action.id : void 0,
+          status: state.show === false ? name : void 0
         })
 
       default:

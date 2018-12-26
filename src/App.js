@@ -11,23 +11,28 @@ import {showForm} from './actions/togglesActions'
 import {ShowDetails} from './components/ShowDetails'
 import {TaskFormContainer} from './components/styled/TaskFormContainer'
 class App extends Component {
-  // Todos:
 
-  // styling task details and task form
+  // Bug:
+  // some PropTypes.object become an array after deletion -> if using real db
+  // the bug will be gone or rewrite logic in the reducer
+
+  // Todos:
+  // make api calls
+  // more styling
 
   render() {
     return (
       <div className="app-container">
-        <TaskFormContainer show={this.props.toggles.showForm}>
-          <TaskForm />
-        </TaskFormContainer>
-        <ShowDetails {...this.props.backlogTask}/>
-        <ShowDetails {...this.props.todoTask}/>
-        <ShowDetails {...this.props.doingTask}/>
-        <ShowDetails {...this.props.doneTask}/>
         <Header className="header" />
         <Button color={'silver'} onClick={this.props.onShowForm}> Add Task </Button>
         <Boards className="board" cards={this.props} />
+          <TaskFormContainer show={this.props.toggles.showForm}>
+            <TaskForm />
+          </TaskFormContainer>
+          <ShowDetails {...this.props.backlogTask}/>
+          <ShowDetails {...this.props.todoTask}/>
+          <ShowDetails {...this.props.doingTask}/>
+          <ShowDetails {...this.props.doneTask}/>
         <Footer className="footer" />
       </div>
     )
