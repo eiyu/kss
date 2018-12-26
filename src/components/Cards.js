@@ -4,16 +4,15 @@ import Card from './Card'
 import {CardsContainer} from './styled/CardsContainer'
 import '../cards.css'
 // todo create updating functionalities
-const Cards = ({items: card}) => (
+const Cards = ({items: card, status}) => (
   <div className="card-container">
-    <div className="card-status">{card.status}</div>
     <CardsContainer>
       {
         Object.keys(card)
           // better use card id than array index
           .map((key) => {
             // create separate component
-            return (<Card item={card[key]} key={key} />)
+            return (<Card status={status} item={card[key]} key={key} />)
           })
       }
     </CardsContainer>
@@ -21,7 +20,8 @@ const Cards = ({items: card}) => (
 )
 
 Cards.propTypes = {
-  items: PropTypes.object
+  items: PropTypes.object,
+  status: PropTypes.string
 }
 
 export default Cards

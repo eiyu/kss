@@ -5,6 +5,7 @@ import {Boards} from './components/Boards'
 import {Header} from './components/Header'
 import {Footer} from './components/Footer'
 import TaskForm from './components/TaskForm'
+import TaskDetails from './components/TaskDetails'
 import {connect} from 'react-redux'
 import {Button} from './components/styled/Button'
 import {showForm} from './actions/togglesActions'
@@ -18,15 +19,12 @@ class App extends Component {
   render() {
     return (
       <div className="app-container">
-        {/*hidden components*/}
-        <TaskDetailsContainer show={this.props.toggles.showDetails.show}>
-          {this.props.toggles.showDetails.card.title}
-        </TaskDetailsContainer>
         <TaskFormContainer show={this.props.toggles.showForm}>
-          {/*Task Form*/}
           <TaskForm />
         </TaskFormContainer>
-
+        <TaskDetailsContainer>
+          <TaskDetails />
+        </TaskDetailsContainer>
         <Header className="header" />
         <Button color={'silver'} onClick={this.props.onShowForm}> Add Task </Button>
         <Boards className="board" cards={this.props} />
@@ -46,13 +44,17 @@ const stateToProps = (state,props) => {
     todo: state.todo,
     doing: state.doing,
     done: state.done,
+    backlogTask: state.backlogTask,
+    todoTask: state.todoTask,
+    doingTask: state.doingTask,
+    doneTask: state.doneTask,
     toggles: state.toggles
   }
 }
 
 const dispatchToProps = (dispatch) => {
   return {
-    onShowForm: (show) => dispatch(showForm())
+    onShowForm: () => dispatch(showForm())
   }
 }
 

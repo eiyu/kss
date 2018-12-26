@@ -10,7 +10,7 @@ export const Board = (props) => (
             <hr/>
             <div> maybe sorting feature here if data gets bigger </div>
           </div>
-          <Cards className="card" items={props.cards} />
+          <Cards status={props.boardName} items={props.cards} />
         </div>
       </BoardTitle>
 )
