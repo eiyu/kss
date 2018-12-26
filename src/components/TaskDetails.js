@@ -3,9 +3,8 @@ import PropTypes from 'prop-types'
 import ButtonGroup from './ButtonGroup'
 // position center top
 const TaskDetails = ({task, status, id}) => {
-  console.log('render');
   return (
-  <div>
+  <div className="details">
     <div>Status: {status}</div>
     <div>Title: {task.title}</div>
     <div>Description: {task.description}</div>

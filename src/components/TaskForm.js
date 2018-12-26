@@ -3,21 +3,7 @@ import PropTypes from 'prop-types'
 import {Button} from './styled/Button'
 import {connect} from 'react-redux'
 import {createCard} from '../actions/cardActions'
-// export const TaskForm = (props) => {
-//   return (
-//   <div>
-//       <legend>Title</legend>
-//       <input type='text' />
-//       <legend>Description</legend>
-//       <input type='text' />
-//       <legend>Assign to</legend>
-//       <input type='text' />
-//       <legend>Point</legend>
-//       <input type='number' /> <br/>
-//       <Button onClick={() => this.props.onCreateTask(this.props.task)}>Create</Button>
-//     </div>
-//   )
-// }
+import {showForm} from '../actions/togglesActions'
 
 class TaskForm extends Component {
   constructor() {
@@ -44,6 +30,12 @@ class TaskForm extends Component {
 
   render() {
     return (
+      <div>
+        <Button
+        onClick={this.props.onShowForm}
+        color="red">
+        x
+        </Button>
       <form>
         <legend>Title</legend>
         <input ref="title" type='text' />
@@ -58,15 +50,18 @@ class TaskForm extends Component {
         >
         Create
         </Button>
-        </form>
+      </form>
+      </div>
     )
   }
 }
 
 TaskForm.propTypes = {
   onCreateTask: PropTypes.func,
+  onShowForm: PropTypes.func
 }
 const mapDispatchToProps = (dispatch) => ({
-  onCreateTask: (task, name) => dispatch(createCard(task,name))
+  onCreateTask: (task, name) => dispatch(createCard(task,name)),
+  onShowForm: () => dispatch(showForm())
 })
 export default connect(null, mapDispatchToProps)(TaskForm)

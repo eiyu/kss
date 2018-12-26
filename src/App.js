@@ -1,15 +1,13 @@
-// import './App.css';
 import PropTypes from 'prop-types'
 import React , {Component} from 'react'
 import {Boards} from './components/Boards'
 import {Header} from './components/Header'
 import {Footer} from './components/Footer'
-import TaskForm from './components/TaskForm'
 import {connect} from 'react-redux'
 import {Button} from './components/styled/Button'
 import {showForm} from './actions/togglesActions'
 import {ShowDetails} from './components/ShowDetails'
-import {TaskFormContainer} from './components/styled/TaskFormContainer'
+import {ShowCreateForm} from './components/ShowCreateForm'
 class App extends Component {
 
   // Todos:
@@ -22,9 +20,7 @@ class App extends Component {
         <Header className="header" />
         <Button color={'silver'} onClick={this.props.onShowForm}> Add Task </Button>
         <Boards className="board" cards={this.props} />
-          <TaskFormContainer show={this.props.toggles.showForm}>
-            <TaskForm />
-          </TaskFormContainer>
+          <ShowCreateForm onToggle={this.props.onShowForm} show={this.props.toggles.showForm} />
           <ShowDetails {...this.props.backlogTask}/>
           <ShowDetails {...this.props.todoTask}/>
           <ShowDetails {...this.props.doingTask}/>

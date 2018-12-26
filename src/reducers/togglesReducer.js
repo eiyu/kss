@@ -13,7 +13,6 @@ const initialState = {
       //   })
 
       case SHOW_FORM:
-      console.log('aa');
         return Object.assign({}, state, {
           showForm: state.showForm === false ? true : false
         })
