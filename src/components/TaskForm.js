@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import {Button} from './styled/Button'
 import {connect} from 'react-redux'
 import {createCard} from '../actions/cardActions'
-import {showForm} from '../actions/togglesActions'
 
 class TaskForm extends Component {
   constructor() {
@@ -25,7 +24,7 @@ class TaskForm extends Component {
       description.value = ""
       assignTo.value = ""
       point.value = ""
-
+      this.props.onToggle()
   }
 
   render() {
@@ -58,10 +57,9 @@ class TaskForm extends Component {
 
 TaskForm.propTypes = {
   onCreateTask: PropTypes.func,
-  onShowForm: PropTypes.func
+  onToggle: PropTypes.func
 }
 const mapDispatchToProps = (dispatch) => ({
   onCreateTask: (task, name) => dispatch(createCard(task,name)),
-  onShowForm: () => dispatch(showForm())
 })
 export default connect(null, mapDispatchToProps)(TaskForm)

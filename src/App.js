@@ -6,12 +6,15 @@ import {Footer} from './components/Footer'
 import {connect} from 'react-redux'
 import {Button} from './components/styled/Button'
 import {showForm} from './actions/togglesActions'
+import {showTaskDetails} from './actions/togglesActions'
 import {ShowDetails} from './components/ShowDetails'
 import {ShowCreateForm} from './components/ShowCreateForm'
 class App extends Component {
 
   // Todos:
   // make api calls
+  // add confirmation for cards actions
+  // form validation
   // more styling
 
   render() {
@@ -21,10 +24,10 @@ class App extends Component {
         <Button color={'silver'} onClick={this.props.onShowForm}> Add Task </Button>
         <Boards className="board" cards={this.props} />
           <ShowCreateForm onToggle={this.props.onShowForm} show={this.props.toggles.showForm} />
-          <ShowDetails {...this.props.backlogTask}/>
-          <ShowDetails {...this.props.todoTask}/>
-          <ShowDetails {...this.props.doingTask}/>
-          <ShowDetails {...this.props.doneTask}/>
+          <ShowDetails onToggle={this.props.onShowDetails} {...this.props.backlogTask}/>
+          <ShowDetails onToggle={this.props.onShowDetails} {...this.props.todoTask}/>
+          <ShowDetails onToggle={this.props.onShowDetails} {...this.props.doingTask}/>
+          <ShowDetails onToggle={this.props.onShowDetails} {...this.props.doneTask}/>
         <Footer className="footer" />
       </div>
     )
@@ -51,7 +54,8 @@ const stateToProps = (state,props) => {
 
 const dispatchToProps = (dispatch) => {
   return {
-    onShowForm: () => dispatch(showForm())
+    onShowForm: () => dispatch(showForm()),
+    onShowDetails: (card, name) => dispatch(showTaskDetails(card, name))
   }
 }
 

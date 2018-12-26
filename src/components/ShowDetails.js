@@ -3,10 +3,10 @@ import PropTypes from 'prop-types'
 import TaskDetails from './TaskDetails'
 import {TaskDetailsContainer} from './styled/TaskDetailsContainer'
 
-export const ShowDetails = ({card,status,show, id}) => (
+export const ShowDetails = ({card,status,show, id, onToggle}) => (
   <div>
     <TaskDetailsContainer show={show}>
-      <TaskDetails task={card} status={status} id={id}/>
+      <TaskDetails onToggle={onToggle} task={card} status={status} id={id}/>
     </TaskDetailsContainer>
   </div>
 )
