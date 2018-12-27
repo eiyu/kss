@@ -10,6 +10,9 @@ import {showTaskDetails} from './actions/togglesActions'
 import {ShowDetails} from './components/ShowDetails'
 import {ShowCreateForm} from './components/ShowCreateForm'
 import Weather from './components/Weather'
+import Grid from './components/styled/Grid'
+import Row from './components/styled/Row'
+import Col from './components/styled/Col'
 class App extends Component {
 
   // Todos:
@@ -20,8 +23,12 @@ class App extends Component {
     return (
       <div className="app-container">
         <Header className="header" />
-          <Weather data={this.props.data}/>
-          <Button color={'silver'} onClick={this.props.onShowForm}> Add Task </Button>
+          <Grid>
+            <Row>
+              <Col sm={2} md={2} lg={6}><Weather data={this.props.data}/></Col>
+              <Col sm={2} md={2} lg={6}><Button add color={'silver'} onClick={this.props.onShowForm}> Add Task </Button></Col>
+            </Row>
+          </Grid>
           <Boards className="board" cards={this.props} />
           <ShowCreateForm onToggle={this.props.onShowForm} show={this.props.toggles.showForm} />
           <ShowDetails onToggle={this.props.onShowDetails} {...this.props.backlogTask}/>

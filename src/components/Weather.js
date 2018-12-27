@@ -16,13 +16,19 @@ class Weather extends Component {
   }
 
   render() {
-    return (
+    // add loading
+    // running out of time
+    // refactor !!!
+    const size = {width: "30px", height: "30px"}
+    return this.props.loaded ? (
       <div>
         <div>Weather </div>
-        <div>City: </div>
-        <div>Current Weather: </div>
+        <div>City: {this.props.data.name} </div>
+        <img style={size} src={`http://openweathermap.org/img/w/${this.props.data.weather[0].icon}.png`} alt="weather"/>
+        <div>Current Weather: {this.props.data.weather[0].main} </div>
+        <div>Current Weather: {this.props.data.weather[0].description} </div>
       </div>
-    )
+    ) : <div>...loading</div>
   }
 }
 
