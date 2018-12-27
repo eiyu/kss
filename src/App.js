@@ -13,18 +13,16 @@ import Weather from './components/Weather'
 class App extends Component {
 
   // Todos:
-  // make api calls
   // add confirmation for cards actions
   // form validation
-  // more styling
 
   render() {
     return (
       <div className="app-container">
         <Header className="header" />
           <Weather data={this.props.data}/>
-        <Button color={'silver'} onClick={this.props.onShowForm}> Add Task </Button>
-        <Boards className="board" cards={this.props} />
+          <Button color={'silver'} onClick={this.props.onShowForm}> Add Task </Button>
+          <Boards className="board" cards={this.props} />
           <ShowCreateForm onToggle={this.props.onShowForm} show={this.props.toggles.showForm} />
           <ShowDetails onToggle={this.props.onShowDetails} {...this.props.backlogTask}/>
           <ShowDetails onToggle={this.props.onShowDetails} {...this.props.todoTask}/>

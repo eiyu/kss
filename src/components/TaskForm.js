@@ -30,11 +30,10 @@ class TaskForm extends Component {
   render() {
     return (
       <div>
-        <Button
-        onClick={this.props.onShowForm}
-        color="red">
-        x
-        </Button>
+        <div className="hide-toggle"
+        onClick={this.props.onToggle}>
+        </div>
+        <Button onClick={this.props.onToggle}>x</Button>
       <form>
         <legend>Title</legend>
         <input ref="title" type='text' />

@@ -5,7 +5,6 @@ import {Button} from './styled/Button'
 import TaskForm from './TaskForm'
 export const ShowCreateForm = ({show, onToggle}) => (
   <TaskFormContainer show={show}>
-    <Button onClick={onToggle}>x</Button>
     <TaskForm onToggle={onToggle} />
   </TaskFormContainer>
 )

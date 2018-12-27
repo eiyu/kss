@@ -6,7 +6,7 @@ import {TaskDetailsContainer} from './styled/TaskDetailsContainer'
 export const ShowDetails = ({card,status,show, id, onToggle}) => (
   <div>
     <TaskDetailsContainer show={show}>
-      <TaskDetails onToggle={onToggle} task={card} status={status} id={id}/>
+        <TaskDetails onToggle={onToggle} task={card} status={status} id={id}/>
     </TaskDetailsContainer>
   </div>
 )

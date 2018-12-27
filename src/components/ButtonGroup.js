@@ -35,6 +35,11 @@ class ButtonGroup extends Component {
             Back-Log
           </Button> {/*first step button position left*/}
           <Button
+            onClick={() => this.props.onRemoveCard(id,status)}
+          color="red">
+          Delete
+          </Button>
+          <Button
             onClick={() => this.props.onUpdateCard(id, card,'Doing','To-Do')}
           color="orange">
             Doing
@@ -50,6 +55,11 @@ class ButtonGroup extends Component {
           color="blue">
             To-Do
           </Button> {/*first step button position left*/}
+          <Button
+            onClick={() => this.props.onRemoveCard(id,status)}
+          color="red">
+          Delete
+          </Button>
           <Button
             onClick={() => this.props.onUpdateCard(id, card,'Done','Doing')}
           color="green">

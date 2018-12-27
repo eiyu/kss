@@ -14,6 +14,10 @@ export const BoardTitle = styled.div`
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
   }
+
+  span {
+    float: right;
+  }
 `
 
 BoardTitle.displayName = 'Button'

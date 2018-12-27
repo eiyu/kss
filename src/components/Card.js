@@ -11,7 +11,6 @@ class Card extends Component {
   // }
 
   render() {
-    console.log('key', this.props.id);
     return (
       <div className="card">
 

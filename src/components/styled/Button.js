@@ -7,6 +7,7 @@ export const Button = styled.button`
   padding: 5px;
   border-radius: 5px;
   background-color: ${({color}) => color};
+  z-index: ${(task) => task ? -1 : 0}
 `
 
 Button.displayName = 'Button'

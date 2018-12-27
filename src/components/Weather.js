@@ -4,10 +4,7 @@ import {connect} from 'react-redux'
 import {fetchWeather} from '../actions/weatherActions'
 class Weather extends Component {
 
-  constructor() {
-    super()
-    this.fetchWeather = this.fetchWeather.bind(this)
-  }
+  // handle failing request
 
   fetchWeather(city) {
     this.props.onFetchWeather(city)
@@ -19,10 +16,11 @@ class Weather extends Component {
   }
 
   render() {
-    console.log('load ',this.props.loading);
     return (
       <div>
-        <div>Weather</div>
+        <div>Weather </div>
+        <div>City: </div>
+        <div>Current Weather: </div>
       </div>
     )
   }
@@ -36,7 +34,7 @@ Weather.propTypes = {
 const stateToProps = (state,props) => {
   return {
     data: state.weather.data,
-    loading: state.weather.loading
+    loaded: state.weather.loading
   }
 }
 
