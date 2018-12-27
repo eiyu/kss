@@ -6,13 +6,27 @@ import {Button} from './styled/Button'
 import '../cards.css'
 
 class Card extends Component {
-  // constructor() {
-  //   super()
-  // }
+  constructor() {
+    super()
+    this.onDragStart = this.onDragStart.bind(this)
+  }
+
+  onDragStart(e,id, card, status) {
+    e.dataTransfer.setData("id",id)
+    e.dataTransfer.setData("status",status)
+    for (var prop in card) {
+      if (card.hasOwnProperty(prop)) {
+        e.dataTransfer.setData(prop, card[prop])
+      }
+    }
+  }
 
   render() {
     return (
-      <div className="card">
+      <div
+      draggable
+      onDragStart={(e)=> this.onDragStart(e,this.props.id, this.props.item, this.props.status )}
+      className="card">
 
         <h4>{this.props.item.title}</h4>
         <p>Point: {this.props.item.point}</p>

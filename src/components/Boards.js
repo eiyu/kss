@@ -1,15 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Board} from './Board'
+import Board from './Board'
 import Grid from './styled/Grid'
 import Row from './styled/Row'
 import Col from './styled/Col'
-// import '../board.css'
-
-// helper function
-// const filterCard = (cards,status) => cards.filter((card) => {
-//   return card.status === status
-// })
 
 export const Boards = (props) => (
   <Grid>
