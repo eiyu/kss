@@ -6,7 +6,6 @@ export const showForm = () => {
 }
 
 export const showTaskDetails = (card,name) => {
-  console.log('act',name);
   return {
     type: `${SHOW_TASK_DETAILS}${name}`,
     card
