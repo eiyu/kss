@@ -29,14 +29,19 @@ export const dragCard = (dispatch,id, card, to, name) => {
   // hide task details
   // create / update
   // delete unused
-  dispatch({
-    type: `${CREATE_CARD}_${to}`,
-    card: {[id]:card}
-  })
-  dispatch({
-    type: `${REMOVE}_${name}`,
-    id
-  })
+  if(to === name) {
+    return void 0
+  }
+  else {
+    dispatch({
+      type: `${CREATE_CARD}_${to}`,
+      card: {[id]:card}
+    })
+    dispatch({
+      type: `${REMOVE}_${name}`,
+      id
+    })
+  }
 }
 
 
