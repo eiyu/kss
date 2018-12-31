@@ -1,9 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import Board from './Board'
-import Grid from './styled/Grid'
-import Row from './styled/Row'
-import Col from './styled/Col'
+import {Grid, Col, Row} from 'react-styled-flexboxgrid'
 
 // this cant be static anymore since i add the custom board feature
 

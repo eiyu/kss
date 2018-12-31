@@ -10,9 +10,7 @@ import {showTaskDetails} from './actions/togglesActions'
 import {ShowDetails} from './components/ShowDetails'
 import {ShowCreateForm} from './components/ShowCreateForm'
 import Weather from './components/Weather'
-import Grid from './components/styled/Grid'
-import Row from './components/styled/Row'
-import Col from './components/styled/Col'
+import {Grid, Col, Row} from 'react-styled-flexboxgrid'
 class App extends Component {
 
   // TODO:
