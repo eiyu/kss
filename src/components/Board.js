@@ -30,6 +30,8 @@ class Board extends React.Component {
   }
 
   render() {
+    console.log(this.props);
+    // return <div> </div>
     const len = Object.keys(this.props.cards).length
     return (
       <BoardTitle
@@ -47,6 +49,7 @@ class Board extends React.Component {
       </BoardTitle>
   )}
 }
+// }
 
 Board.propTypes = {
   boardName: PropTypes.string,

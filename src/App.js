@@ -46,12 +46,15 @@ App.propTypes = {
   cards: PropTypes.object
 }
 
+//
 const stateToProps = (state,props) => {
+  console.log('current state',state);
   return {
-    backlog: state.backlog,
-    todo: state.todo,
-    doing: state.doing,
-    done: state.done,
+    backlog: state['Back-Log'],
+    todo: state['To-Do'],
+    doing: state['Doing'],
+    done: state['Done'],
+    custom: 'foo',
     backlogTask: state.backlogTask,
     todoTask: state.todoTask,
     doingTask: state.doingTask,
