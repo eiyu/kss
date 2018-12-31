@@ -20,7 +20,7 @@ export const BoardTitle = styled.div`
   }
 `
 
-BoardTitle.displayName = 'Button'
+BoardTitle.displayName = 'BoardTitle'
 
 BoardTitle.propTypes = {
   color: PropTypes.string
