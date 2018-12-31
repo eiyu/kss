@@ -15,9 +15,10 @@ import Row from './components/styled/Row'
 import Col from './components/styled/Col'
 class App extends Component {
 
-  // Todos:
-  // add confirmation for cards actions
-  // form validation
+  // TODO:
+  // create board action
+  // where user can create custom board.
+  // user can display single borad
 
   render() {
     return (
