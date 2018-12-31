@@ -1,5 +1,5 @@
 export const treeData = {
-  "backlog": {
+  "Back-Log": {
     "id002": {
       title:"test 2",
       description: "test",
@@ -19,7 +19,7 @@ export const treeData = {
       assignTo:"foo"
     },
   },
-  "todo": {
+  "To-Do": {
     "id006": {
       title:"test 6",
       description: "test",
@@ -39,7 +39,7 @@ export const treeData = {
       assignTo:"foo"
     },
   },
-"doing": {
+"Doing": {
   "id007": {
     title:"test 7",
     description: "test",
@@ -59,7 +59,7 @@ export const treeData = {
     assignTo:"foo"
   },
 },
-  "done": {
+  "Done": {
     "id0011": {
       title:"test 11",
       description: "test",
