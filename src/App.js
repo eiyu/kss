@@ -51,13 +51,20 @@ App.propTypes = {
 
 //
 const stateToProps = (state,props) => {
-  console.log('current state',state);
+  // adding more complexity since each board props cant be static anymore !!
+  const boardProps = Object.keys(state.mainBoard).reduce((prev, next) => {
+    // is it better to mutate prev or not?
+    return Object.assign(prev, {[next]: state[next]})
+  }, {})
+
   return {
+    mainBoard: state.mainBoard,
+    ...boardProps,
     backlog: state['Back-Log'],
     todo: state['To-Do'],
     doing: state['Doing'],
     done: state['Done'],
-    custom: 'foo',
+    // custom: 'foo',
     backlogTask: state.backlogTask,
     todoTask: state.todoTask,
     doingTask: state.doingTask,
