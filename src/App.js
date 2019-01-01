@@ -5,10 +5,11 @@ import {Header} from './components/Header'
 import {Footer} from './components/Footer'
 import {connect} from 'react-redux'
 import {Button} from './components/styled/Button'
-import {showForm} from './actions/togglesActions'
+import {showForm, showBoard} from './actions/togglesActions'
 import {showTaskDetails} from './actions/togglesActions'
 import {ShowDetails} from './components/ShowDetails'
-import {ShowCreateForm} from './components/ShowCreateForm'
+import {ShowTaskForm} from './components/ShowTaskForm'
+import {ShowBoardForm} from './components/ShowBoardForm'
 import Weather from './components/Weather'
 import {Grid, Col, Row} from 'react-styled-flexboxgrid'
 class App extends Component {
@@ -25,11 +26,15 @@ class App extends Component {
           <Grid>
             <Row>
               <Col sm={2} md={2} lg={6}><Weather data={this.props.data}/></Col>
-              <Col sm={2} md={2} lg={6}><Button add color={'silver'} onClick={this.props.onShowForm}> Add Task </Button></Col>
+              <Col sm={2} md={2} lg={6}>
+                <Button add color={'silver'} onClick={this.props.onShowForm}> Add Task </Button>
+                <Button add color={'grey'} onClick={this.props.onShowBoard}> Add Board </Button>
+              </Col>
             </Row>
           </Grid>
           <Boards className="board" cards={this.props} />
-          <ShowCreateForm onToggle={this.props.onShowForm} show={this.props.toggles.showForm} />
+          <ShowTaskForm onToggle={this.props.onShowForm} show={this.props.toggles.showForm} />
+          <ShowBoardForm onToggle={this.props.onShowBoard} show={this.props.toggles.showBoard} />
           <ShowDetails onToggle={this.props.onShowDetails} {...this.props.backlogTask}/>
           <ShowDetails onToggle={this.props.onShowDetails} {...this.props.todoTask}/>
           <ShowDetails onToggle={this.props.onShowDetails} {...this.props.doingTask}/>
@@ -64,6 +69,7 @@ const stateToProps = (state,props) => {
 const dispatchToProps = (dispatch) => {
   return {
     onShowForm: () => dispatch(showForm()),
+    onShowBoard: () => dispatch(showBoard()),
     onShowDetails: (card, name) => dispatch(showTaskDetails(card, name))
   }
 }

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 
-export const TaskFormContainer = styled.div`
+export const FormContainer = styled.div`
   visibility: ${({show}) => show ? "show" : "hidden"};
   background: rgba(0, 0, 0, 0.2);
   width: 100%;
@@ -30,7 +30,7 @@ export const TaskFormContainer = styled.div`
   }
 `
 
-TaskFormContainer.displayName = "TaskFormContainer"
-TaskFormContainer.propTypes = {
+FormContainer.displayName = "FormContainer"
+FormContainer.propTypes = {
   show: PropTypes.bool
 }

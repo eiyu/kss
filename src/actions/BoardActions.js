@@ -9,7 +9,7 @@ export const displaySingleBoard = (boardName) => {
   }
 }
 
-export const addBoard = boardName => {
+export const createBoard = boardName => {
   return {
     type: ADD_BOARD,
     boardName
