@@ -35,6 +35,8 @@ class App extends Component {
           <Boards className="board" cards={this.props} />
           <ShowTaskForm onToggle={this.props.onShowForm} show={this.props.toggles.showForm} />
           <ShowBoardForm onToggle={this.props.onShowBoard} show={this.props.toggles.showBoard} />
+
+          {/* create dynamic version */}
           <ShowDetails onToggle={this.props.onShowDetails} {...this.props.backlogTask}/>
           <ShowDetails onToggle={this.props.onShowDetails} {...this.props.todoTask}/>
           <ShowDetails onToggle={this.props.onShowDetails} {...this.props.doingTask}/>
