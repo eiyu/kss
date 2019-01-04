@@ -15,7 +15,7 @@ const switchId = (a,b) => arr => arr.map((val,i,r) => {
 export const boardContainerReducer = (state=names, action) => {
   switch (action.type) {
     case CREATE:
-      return [...state, action.id]
+      return [...state, action.name]
     case SWITCH:
       return switchId(action.current,action.destination)(state)
     case REMOVE:

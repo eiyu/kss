@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import PropTypes from 'prop-types'
 import {Button} from './styled/Button'
 import {connect} from 'react-redux'
-import {createBoard} from '../actions/boardActions'
+import {createContainer} from '../actions/boardContainerActions'
 
 class BoardForm extends Component {
   constructor() {
@@ -12,6 +12,8 @@ class BoardForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    const {name} = this.refs
+    this.props.onCreateContainer(name.value)
   }
 
   render() {
@@ -40,6 +42,6 @@ BoardForm.propTypes = {
   onToggle: PropTypes.func
 }
 const mapDispatchToProps = (dispatch) => ({
-  onCreateBoard: (details, name) => dispatch(createBoard(details, name)),
+  onCreateContainer: (name) => createContainer(dispatch)(name),
 })
 export default connect(null, mapDispatchToProps)(BoardForm)

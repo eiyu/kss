@@ -1,3 +1,4 @@
+import {ADD_BOARD} from './boardActions'
 export const REMOVE = "REMOVE"
 export const CREATE = "CREATE"
 export const SWITCH = "SWITCH"
@@ -13,7 +14,13 @@ export const switchBoard = (current,destination) => ({
   destination
 })
 
-export const createContainer = (id) => ({
-  type: CREATE,
-  id
-})
+export const createContainer = dispatch => (name) => {
+  dispatch({
+    type: CREATE,
+    name
+  })
+  dispatch({
+    type: ADD_BOARD,
+    boardName: name
+  })
+}

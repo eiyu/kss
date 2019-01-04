@@ -21,9 +21,13 @@ export const Boards = (props) => {
   return (
   <Grid>
     <Row>
-    {props.containers.map((val,i) => (
-      <BoardContainer cards={props[val]} boardName={val} color={helper(val)} />
-    ))}
+    { props.containers.map((val,i) => {
+      if(props[val] !== undefined)  {
+        return <BoardContainer key={val} cards={props[val]} boardName={val} color={helper(val)} />
+      } else {
+        return <div> </div>
+      }
+    })}
     </Row>
   </Grid>
 )}
