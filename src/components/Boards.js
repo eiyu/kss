@@ -1,19 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import Board from './Board'
-import {Grid, Col, Row} from 'react-styled-flexboxgrid'
+import BoardContainer from './BoardContainer'
+import {Grid, Row} from 'react-styled-flexboxgrid'
 
 // this cant be static anymore since i add the custom board feature
+// improve nesting tags
 
 export const Boards = (props) => {
-console.log(props);
+  const helper = name => {
+    switch (name) {
+      case "Back-Log": return "red"
+      case "To-Do": return "blue"
+      case "Doing": return "orange"
+      case "Done": return "green"
+
+      default:
+
+    }
+  }
   return (
   <Grid>
     <Row>
-      <Col xs={10} md={3} lg={3}><Board cards={props.cards.backlog} boardName="Back-Log" color="red"/></Col>
-      <Col xs={10} md={3} lg={3}><Board cards={props.cards.todo} boardName="To-Do" color="blue"/></Col>
-      <Col xs={10} md={3} lg={3}><Board cards={props.cards.doing} boardName="Doing" color="orange"/></Col>
-      <Col xs={10} md={3} lg={3}><Board cards={props.cards.done} boardName="Done" color="green"/></Col>
+    {props.containers.map((val,i) => (
+      <BoardContainer cards={props[val]} boardName={val} color={helper(val)} />
+    ))}
     </Row>
   </Grid>
 )}

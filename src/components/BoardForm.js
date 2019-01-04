@@ -12,10 +12,6 @@ class BoardForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    const {name} = this.refs
-    console.log('beep',name.value);
-    this.props.onCreateBoard(name.value)
-    name.value = ""
   }
 
   render() {

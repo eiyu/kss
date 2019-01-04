@@ -15,6 +15,7 @@ class Board extends React.Component {
   }
 
   onDragOver = (e) => {
+    // handle missed drag context
     e.preventDefault()
   }
 

@@ -32,7 +32,7 @@ class App extends Component {
               </Col>
             </Row>
           </Grid>
-          <Boards className="board" cards={this.props} />
+          <Boards className="board" {...this.props} />
           <ShowTaskForm onToggle={this.props.onShowForm} show={this.props.toggles.showForm} />
           <ShowBoardForm onToggle={this.props.onShowBoard} show={this.props.toggles.showBoard} />
 
@@ -54,19 +54,12 @@ App.propTypes = {
 //
 const stateToProps = (state,props) => {
   // adding more complexity since each board props cant be static anymore !!
-  const boardProps = Object.keys(state.mainBoard).reduce((prev, next) => {
-    // is it better to mutate prev or not?
+  const spreadProps = state.containers.reduce((prev,next) => {
     return Object.assign(prev, {[next]: state[next]})
-  }, {})
-
+  },{})
   return {
-    mainBoard: state.mainBoard,
-    ...boardProps,
-    backlog: state['Back-Log'],
-    todo: state['To-Do'],
-    doing: state['Doing'],
-    done: state['Done'],
-    // custom: 'foo',
+    containers: state.containers,
+    ...spreadProps,
     backlogTask: state.backlogTask,
     todoTask: state.todoTask,
     doingTask: state.doingTask,

@@ -71,3 +71,10 @@ export const treeData = {
     },
   }
 }
+
+export const names = [
+  "Back-Log",
+  "To-Do",
+  "Doing",
+  "Done"
+]

@@ -1,3 +1,4 @@
+
 export const DISPLAY_SINGLE_BOARD = 'DISPLAY_SINGLE_BOARD'
 export const ADD_BOARD = 'ADD_BOARD'
 
